@@ -1,0 +1,1120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Trucon — Truth from all angles and edges of Earth. Politics, theology, history, science and identity through a biblical lens."
+    />
+    <title>Trucon — Truth Beacon</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="pics/trucon11.png" />
+
+    <!-- RSS -->
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Trucon RSS"
+      href="/rss.xml"
+    />
+
+    <!-- Fonts + Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Markdown Parser -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  </head>
+  <body>
+    <!-- ═══════════════════════════════════════════════════════
+     APP SHELL
+══════════════════════════════════════════════════════════ -->
+    <div class="app" id="app">
+      <!-- ── TOPBAR ─────────────────────────────────────────── -->
+      <header class="topbar">
+        <button class="btn-hamburger" onclick="openDrawer()" aria-label="Menu">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+
+        <div class="brand">
+          <img
+            src="pics/trucon11.png"
+            alt="Trucon"
+            onerror="this.style.display = 'none'"
+          />
+          <span class="brand-name">TRUCON</span>
+          <span class="brand-dot">·</span>
+          <span
+            style="font-weight: 300; font-size: 0.85rem; color: var(--muted)"
+            >Truth Beacon</span
+          >
+        </div>
+
+        <div class="topbar-search">
+          <input
+            type="search"
+            placeholder="Search posts…"
+            onkeyup="onPostSearchKeydown(event)"
+            aria-label="Search posts"
+          />
+        </div>
+
+        <div class="top-actions">
+          <button
+            id="topbar-login-btn"
+            class="btn-icon btn-primary"
+            onclick="openAuth('login')"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            <span>Sign In</span>
+          </button>
+          <a href="/rss.xml" class="btn-icon" title="RSS Feed" target="_blank">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9" />
+              <path d="M4 4a16 16 0 0 1 16 16" />
+              <circle cx="5" cy="19" r="1" />
+            </svg>
+          </a>
+        </div>
+      </header>
+
+      <!-- ── SIDEBAR (desktop) ──────────────────────────────── -->
+      <aside class="sidebar">
+        <div class="sidebar-logo">
+          <img
+            src="pics/trucon11.png"
+            alt="Trucon"
+            onerror="this.style.display = 'none'"
+          />
+          <div class="tagline">
+            "And you shall know the truth,<br />and the truth shall set you
+            free."
+          </div>
+        </div>
+
+        <nav class="nav-links">
+          <span class="nav-section-label">Discover</span>
+          <button
+            class="nav-btn active"
+            data-view="home"
+            onclick="switchView('home')"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+              <polyline points="9 22 9 12 15 12 15 22" />
+            </svg>
+            Home
+          </button>
+          <button
+            class="nav-btn"
+            data-view="health"
+            onclick="switchView('health')"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+            </svg>
+            Health & Wellness
+          </button>
+          <button
+            class="nav-btn"
+            data-view="library"
+            onclick="switchView('library')"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path
+                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+              />
+            </svg>
+            Library
+          </button>
+          <button class="nav-btn" data-view="chat" onclick="switchView('chat')">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+              />
+            </svg>
+            Global Chat
+          </button>
+
+          <span class="nav-section-label">Trucon</span>
+          <button
+            class="nav-btn"
+            data-view="about"
+            onclick="switchView('about')"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="8" x2="12" y2="12" />
+              <line x1="12" y1="16" x2="12.01" y2="16" />
+            </svg>
+            About Trucon
+          </button>
+          <button
+            class="nav-btn admin-nav-btn"
+            data-view="admin"
+            onclick="switchView('admin')"
+            style="display: none"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M12 20h9" />
+              <path
+                d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"
+              />
+            </svg>
+            Write a Post
+          </button>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="server-status">
+            <span class="status-dot" id="status-dot"></span>
+            <span id="status-text">Checking…</span>
+          </div>
+          <div id="sidebar-user-area">
+            <button class="btn-join" onclick="openAuth('login')">
+              Sign in / Join Trucon
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- ── MAIN CONTENT AREA ──────────────────────────────── -->
+      <main class="main" id="main-content">
+        <!-- HOME / FEED ──────────────────────────────────── -->
+        <section id="view-home" class="view active">
+          <div class="section-header">
+            <h2>Feed</h2>
+            <p class="sub">
+              Truth, scripture, history and the world — curated.
+            </p>
+          </div>
+          <div class="filter-tags" id="category-filters">
+            <button
+              class="filter-tag active"
+              data-cat="all"
+              onclick="setCategoryFilter('all')"
+            >
+              All
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="theology"
+              onclick="setCategoryFilter('theology')"
+            >
+              Theology
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="ancient mysteries"
+              onclick="setCategoryFilter('ancient mysteries')"
+            >
+              Ancient
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="identity"
+              onclick="setCategoryFilter('identity')"
+            >
+              Identity
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="religion"
+              onclick="setCategoryFilter('religion')"
+            >
+              Religion
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="systems"
+              onclick="setCategoryFilter('systems')"
+            >
+              Systems
+            </button>
+            <button
+              class="filter-tag"
+              data-cat="science"
+              onclick="setCategoryFilter('science')"
+            >
+              Science
+            </button>
+          </div>
+          <div class="feed" id="posts-feed">
+            <div class="spinner-wrap">
+              <div class="spinner"></div>
+              Loading posts…
+            </div>
+          </div>
+        </section>
+
+        <!-- HEALTH ──────────────────────────────────────── -->
+        <section id="view-health" class="view">
+          <div class="section-header">
+            <h2>Health & Wellness</h2>
+            <p class="sub">Nutrition, fitness, and mental health guidance.</p>
+          </div>
+          <div class="health-feed" id="health-feed">
+            <div class="spinner-wrap"><div class="spinner"></div></div>
+          </div>
+        </section>
+
+        <!-- LIBRARY ─────────────────────────────────────── -->
+        <section id="view-library" class="view">
+          <div class="library-header">
+            <h2>📚 Trucon Library</h2>
+            <p
+              style="color: var(--muted); font-size: 0.9rem; margin: 6px 0 16px"
+            >
+              Free books — theology, history, philosophy, science &amp; more.
+            </p>
+            <div class="search-bar">
+              <input
+                type="search"
+                id="lib-search-input"
+                placeholder="Search books, authors…"
+                onkeydown="onSearchKeydown(event)"
+                aria-label="Search books"
+              />
+              <button onclick="librarySearch()">Search</button>
+            </div>
+            <div class="quick-tags">
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('Bible theology')"
+              >
+                Theology
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('African history')"
+              >
+                Africa
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('philosophy Plato Aristotle')"
+              >
+                Philosophy
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('ancient civilizations')"
+              >
+                Ancient World
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('physics cosmology')"
+              >
+                Science
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('politics economics')"
+              >
+                Politics
+              </button>
+              <button
+                class="quick-tag"
+                onclick="quickLibSearch('psychology mind')"
+              >
+                Psychology
+              </button>
+            </div>
+          </div>
+          <div class="books-grid" id="books-grid">
+            <div class="spinner-wrap" style="grid-column: 1/-1">
+              <div class="spinner"></div>
+            </div>
+          </div>
+
+          <div
+            style="
+              text-align: center;
+              margin-top: 24px;
+              padding: 16px;
+              background: var(--panel);
+              border: 1px solid var(--border);
+              border-radius: var(--radius);
+            "
+          >
+            <p
+              style="color: var(--muted); font-size: 0.88rem; margin: 0 0 10px"
+            >
+              Can't find what you're looking for?
+            </p>
+            <a
+              id="zlib-fallback-link"
+              href="https://z-library.sk/s/"
+              target="_blank"
+              rel="noopener"
+              class="btn-icon btn-primary"
+              style="display: inline-flex"
+            >
+              Search all of Z-Library →
+            </a>
+          </div>
+        </section>
+
+        <!-- CHAT ────────────────────────────────────────── -->
+        <section id="view-chat" class="view">
+          <div class="section-header">
+            <h2>Global Chat Room</h2>
+            <p class="sub">Live discussion — across all topics.</p>
+          </div>
+          <div class="chat-wrapper">
+            <div class="chat-header">
+              <h3>
+                <span class="chat-live-dot"></span>
+                Live Conversation
+              </h3>
+              <div class="chat-topics">
+                <button
+                  class="topic-chip active"
+                  data-topic="general"
+                  onclick="setTopic('general')"
+                >
+                  #general
+                </button>
+                <button
+                  class="topic-chip"
+                  data-topic="theology"
+                  onclick="setTopic('theology')"
+                >
+                  #theology
+                </button>
+                <button
+                  class="topic-chip"
+                  data-topic="history"
+                  onclick="setTopic('history')"
+                >
+                  #history
+                </button>
+                <button
+                  class="topic-chip"
+                  data-topic="science"
+                  onclick="setTopic('science')"
+                >
+                  #science
+                </button>
+                <button
+                  class="topic-chip"
+                  data-topic="identity"
+                  onclick="setTopic('identity')"
+                >
+                  #identity
+                </button>
+                <button
+                  class="topic-chip"
+                  data-topic="politics"
+                  onclick="setTopic('politics')"
+                >
+                  #politics
+                </button>
+              </div>
+            </div>
+            <div class="chat-messages" id="chat-messages">
+              <div class="empty-state">
+                <p>No messages yet. Start the conversation!</p>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <textarea
+                class="chat-input"
+                id="chat-input"
+                rows="1"
+                placeholder="Share your thoughts…"
+                onkeydown="onChatKeydown(event)"
+              ></textarea>
+              <button
+                class="chat-send-btn"
+                onclick="sendChatMessage()"
+                aria-label="Send"
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <line x1="22" y1="2" x2="11" y2="13" />
+                  <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT ───────────────────────────────────────── -->
+        <section id="view-about" class="view">
+          <div class="about-hero">
+            <h2>About <span class="accent">Trucon</span></h2>
+            <p>
+              Trucon — the Truth Beacon — is a curated platform for
+              truth-seekers. We cover politics, theology, ancient history,
+              science and identity through the lens of scripture, evidence and
+              honest inquiry.
+            </p>
+          </div>
+          <div class="about-stats">
+            <div class="about-stat">
+              <div class="about-stat-num">∞</div>
+              <div class="about-stat-label">Perspectives explored</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">1</div>
+              <div class="about-stat-label">Source of ultimate truth</div>
+            </div>
+            <div class="about-stat">
+              <div class="about-stat-num">🌍</div>
+              <div class="about-stat-label">Global community</div>
+            </div>
+          </div>
+          <div
+            style="
+              background: var(--panel);
+              border: 1px solid var(--border);
+              border-radius: var(--radius);
+              padding: 24px;
+              margin-top: 16px;
+              font-family: var(--font-body);
+              line-height: 1.8;
+              color: var(--text-2);
+            "
+          >
+            <p>
+              <strong style="color: var(--text)">Our Mission:</strong> To
+              present truth from all angles and edges of earth — not as
+              partisans, but as honest seekers. We believe the Word of God is
+              the ultimate anchor in a world full of competing narratives.
+            </p>
+            <p style="margin-top: 12px">
+              Topics covered include ancient archaeology and mysteries, biblical
+              theology and covenant theology, the systems of this world,
+              identity and calling, health and creation care, and frontier
+              science.
+            </p>
+            <p
+              style="margin-top: 12px; font-style: italic; color: var(--accent)"
+            >
+              "Buy truth, and do not sell it — wisdom, instruction, and
+              understanding." — Proverbs 23:23
+            </p>
+          </div>
+        </section>
+
+        <!-- ADMIN ───────────────────────────────────────── -->
+        <section id="view-admin" class="view">
+          <div class="admin-panel">
+            <h2>✍ Write a Post</h2>
+            <p
+              style="
+                color: var(--muted);
+                margin-bottom: 24px;
+                font-size: 0.9rem;
+              "
+            >
+              Posts use Markdown formatting. They are published directly to the
+              feed.
+            </p>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-title">Post Title *</label>
+              <input
+                class="form-input"
+                id="admin-title"
+                type="text"
+                placeholder="Enter a clear, compelling title…"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-category">Category</label>
+              <select class="form-select" id="admin-category">
+                <option value="">— Select category —</option>
+                <option value="theology">Theology</option>
+                <option value="identity">Identity</option>
+                <option value="ancient mysteries">Ancient Mysteries</option>
+                <option value="history">History</option>
+                <option value="science">Science</option>
+                <option value="religion">Religion</option>
+                <option value="systems">World Systems</option>
+                <option value="politics">Politics</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-image"
+                >Cover Image URL</label
+              >
+              <input
+                class="form-input"
+                id="admin-image"
+                type="url"
+                placeholder="https://… (optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-video"
+                >YouTube Embed URL</label
+              >
+              <input
+                class="form-input"
+                id="admin-video"
+                type="url"
+                placeholder="https://www.youtube.com/embed/… (optional)"
+              />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="admin-content"
+                >Content (Markdown) *</label
+              >
+              <textarea
+                class="form-textarea"
+                id="admin-content"
+                placeholder="## Heading&#10;&#10;Write your article here using Markdown…&#10;&#10;**Bold**, *italic*, lists, tables, etc."
+              ></textarea>
+              <p class="form-note">
+                Supports full Markdown: headings, **bold**, *italic*, lists,
+                tables, `code` and more.
+              </p>
+            </div>
+
+            <button
+              class="btn-submit"
+              id="admin-submit-btn"
+              onclick="submitAdminPost(event)"
+            >
+              Publish Post
+            </button>
+          </div>
+        </section>
+      </main>
+      <!-- end .main -->
+
+      <!-- ── RIGHTBAR (desktop) ────────────────────────────── -->
+      <aside class="rightbar">
+        <div class="rightbar-inner">
+          <!-- Trending -->
+          <div class="right-card">
+            <div class="right-section-title">Trending on Trucon</div>
+            <div id="trending-list"></div>
+          </div>
+
+          <!-- Mini Chat Preview -->
+          <div class="right-card">
+            <div class="right-section-title">Recent Chat</div>
+            <div class="mini-chat" id="mini-chat">
+              <div class="mini-msg">
+                <div class="mini-msg-name">Trucon</div>
+                <div class="mini-msg-text">
+                  Welcome! Join the global chat to discuss truth.
+                </div>
+              </div>
+            </div>
+            <button
+              class="btn-icon"
+              style="width: 100%; justify-content: center; margin-top: 10px"
+              onclick="switchView('chat')"
+            >
+              Open Chat Room →
+            </button>
+          </div>
+
+          <!-- RSS -->
+          <div class="right-card" style="text-align: center">
+            <div class="right-section-title">Subscribe</div>
+            <a
+              href="/rss.xml"
+              target="_blank"
+              class="btn-icon"
+              style="width: 100%; justify-content: center; gap: 6px"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                width="15"
+                height="15"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 11a9 9 0 0 1 9 9" />
+                <path d="M4 4a16 16 0 0 1 16 16" />
+                <circle cx="5" cy="19" r="1" />
+              </svg>
+              RSS Feed
+            </a>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- end .app -->
+
+    <!-- ════════════════════════════════════════════════════════
+     MOBILE DRAWER
+════════════════════════════════════════════════════════ -->
+    <div
+      class="drawer-overlay"
+      id="drawer-overlay"
+      onclick="closeDrawer()"
+    ></div>
+    <aside class="drawer" id="sidebar-drawer">
+      <nav class="nav-links" style="padding: 14px">
+        <span class="nav-section-label">Navigate</span>
+        <button class="nav-btn" data-view="home" onclick="switchView('home')">
+          🏠 Home
+        </button>
+        <button
+          class="nav-btn"
+          data-view="health"
+          onclick="switchView('health')"
+        >
+          🌿 Health
+        </button>
+        <button
+          class="nav-btn"
+          data-view="library"
+          onclick="switchView('library')"
+        >
+          📚 Library
+        </button>
+        <button class="nav-btn" data-view="chat" onclick="switchView('chat')">
+          💬 Chat
+        </button>
+        <button class="nav-btn" data-view="about" onclick="switchView('about')">
+          ℹ️ About
+        </button>
+        <button
+          class="nav-btn admin-nav-btn"
+          data-view="admin"
+          onclick="switchView('admin')"
+          style="display: none"
+        >
+          ✍ Write Post
+        </button>
+      </nav>
+      <div style="padding: 14px; border-top: 1px solid var(--border)">
+        <div id="drawer-user-area">
+          <button class="btn-join" onclick="openAuth('login')">
+            Sign in / Join Trucon
+          </button>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════════
+     BOTTOM NAV (mobile)
+════════════════════════════════════════════════════════ -->
+    <nav class="bottom-nav">
+      <div class="bottom-nav-row">
+        <button
+          class="bnav-btn active"
+          data-view="home"
+          onclick="switchView('home')"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          Home
+        </button>
+        <button
+          class="bnav-btn"
+          data-view="health"
+          onclick="switchView('health')"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+          </svg>
+          Health
+        </button>
+        <button
+          class="bnav-btn"
+          data-view="library"
+          onclick="switchView('library')"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path
+              d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+            />
+          </svg>
+          Library
+        </button>
+        <button class="bnav-btn" data-view="chat" onclick="switchView('chat')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+            />
+          </svg>
+          Chat
+        </button>
+        <button class="bnav-btn" onclick="openAuth('login')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          Account
+        </button>
+      </div>
+    </nav>
+
+    <!-- ════════════════════════════════════════════════════════
+     POST FULL-ARTICLE MODAL
+════════════════════════════════════════════════════════ -->
+    <div
+      id="post-modal"
+      class="modal-overlay hidden"
+      onclick="if (event.target === this) closePost();"
+    >
+      <div class="modal-card">
+        <div class="modal-topbar">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <img
+              id="modal-art-avatar"
+              src=""
+              alt=""
+              class="modal-art-avatar"
+              style="
+                width: 36px;
+                height: 36px;
+                border-radius: 8px;
+                object-fit: cover;
+                border: 1px solid var(--border);
+              "
+            />
+            <div>
+              <div
+                id="modal-author-name"
+                style="font-weight: 700; font-size: 0.9rem"
+              ></div>
+              <div
+                id="modal-author-info"
+                style="font-size: 0.76rem; color: var(--muted)"
+              ></div>
+            </div>
+          </div>
+          <button class="modal-close-btn" onclick="closePost()">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <img
+            id="modal-hero-img"
+            class="modal-hero-img hidden"
+            src=""
+            alt=""
+          />
+          <h1 class="modal-art-title" id="modal-title"></h1>
+          <div class="article-body" id="modal-article-body"></div>
+        </div>
+
+        <div class="modal-footer">
+          <div class="modal-actions">
+            <button
+              class="modal-action-btn"
+              id="modal-like-btn"
+              onclick="modalLike()"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+                />
+              </svg>
+              Like &nbsp;<span id="modal-like-count">0</span>
+            </button>
+            <button
+              class="modal-action-btn"
+              onclick="sharePost(State?.currentPost?.id)"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <circle cx="18" cy="5" r="3" />
+                <circle cx="6" cy="12" r="3" />
+                <circle cx="18" cy="19" r="3" />
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49" />
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49" />
+              </svg>
+              Share &nbsp;<span id="modal-share-count">0</span>
+            </button>
+            <button
+              class="modal-action-btn"
+              onclick="document.getElementById('comment-input').focus()"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+                />
+              </svg>
+              Comments &nbsp;<span id="modal-comment-count">0</span>
+            </button>
+          </div>
+
+          <div class="comments-section">
+            <h4>Comments</h4>
+            <div class="comment-form">
+              <textarea
+                class="comment-input"
+                id="comment-input"
+                rows="1"
+                placeholder="Add a comment… (Enter to send)"
+                onkeydown="onCommentKeydown(event)"
+              ></textarea>
+              <button class="btn-comment-send" onclick="submitComment()">
+                Send
+              </button>
+            </div>
+            <div id="comments-list"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════
+     AUTH MODAL
+════════════════════════════════════════════════════════ -->
+    <div
+      id="auth-overlay"
+      class="auth-overlay hidden"
+      onclick="if (event.target === this) closeAuthModal();"
+    >
+      <div class="auth-card">
+        <div class="auth-header">
+          <img
+            class="auth-logo"
+            src="pics/trucon11.png"
+            alt="Trucon"
+            onerror="this.style.display = 'none'"
+          />
+          <h2>Trucon</h2>
+          <p>Truth from all angles of Earth</p>
+        </div>
+
+        <div class="auth-tabs">
+          <button
+            class="auth-tab active"
+            id="tab-login"
+            onclick="switchAuthTab('login')"
+          >
+            Sign In
+          </button>
+          <button
+            class="auth-tab"
+            id="tab-register"
+            onclick="switchAuthTab('register')"
+          >
+            Create Account
+          </button>
+        </div>
+
+        <div class="auth-form-wrap">
+          <!-- Error message -->
+          <div id="auth-error" class="auth-error hidden"></div>
+
+          <!-- LOGIN FORM -->
+          <div id="form-login">
+            <div class="auth-field">
+              <label class="auth-label" for="login-email">Email Address</label>
+              <input
+                class="auth-input"
+                id="login-email"
+                type="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+              />
+            </div>
+            <div class="auth-field">
+              <label class="auth-label" for="login-password">Password</label>
+              <input
+                class="auth-input"
+                id="login-password"
+                type="password"
+                placeholder="Your password"
+                autocomplete="current-password"
+              />
+            </div>
+            <button
+              class="btn-auth"
+              id="btn-login"
+              onclick="handleLogin(event)"
+            >
+              Sign In
+            </button>
+            <p class="auth-footer-text">
+              No account?
+              <a onclick="switchAuthTab('register')">Create one — it's free</a>
+            </p>
+          </div>
+
+          <!-- REGISTER FORM -->
+          <div id="form-register" class="hidden">
+            <div class="auth-field">
+              <label class="auth-label" for="reg-name">Full Name</label>
+              <input
+                class="auth-input"
+                id="reg-name"
+                type="text"
+                placeholder="Your name"
+                autocomplete="name"
+              />
+            </div>
+            <div class="auth-field">
+              <label class="auth-label" for="reg-email">Email Address</label>
+              <input
+                class="auth-input"
+                id="reg-email"
+                type="email"
+                placeholder="you@email.com"
+                autocomplete="email"
+              />
+            </div>
+            <div class="auth-field">
+              <label class="auth-label" for="reg-password">Password</label>
+              <input
+                class="auth-input"
+                id="reg-password"
+                type="password"
+                placeholder="Min. 8 characters"
+                autocomplete="new-password"
+              />
+            </div>
+            <button
+              class="btn-auth"
+              id="btn-register"
+              onclick="handleRegister(event)"
+            >
+              Create Account
+            </button>
+            <p class="auth-footer-text">
+              Already have an account?
+              <a onclick="switchAuthTab('login')">Sign in</a>
+            </p>
+          </div>
+        </div>
+
+        <button class="auth-close" onclick="closeAuthModal()">×</button>
+      </div>
+    </div>
+
+    <!-- ════════════════════════════════════════════════════════
+     TOAST CONTAINER
+════════════════════════════════════════════════════════ -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- ════════════════════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════════════════════ -->
+    <script src="app.js"></script>
+  </body>
+</html>
