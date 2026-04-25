@@ -498,19 +498,78 @@ input, textarea, select, button {
 /* ── Section header ────────────────────────────────────── */
 .section-header {
   margin-bottom: 20px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #1e1a14 0%, #1a1a1a 60%, #1e1e1e 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Amber glow in top-right corner */
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 130px;
+  height: 130px;
+  background: radial-gradient(circle, rgba(200,146,42,0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Faint horizontal line at bottom */
+.section-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 22px;
+  right: 22px;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-dim), transparent);
+  pointer-events: none;
 }
 
 .section-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--text);
-  margin: 0 0 4px;
+  margin: 0 0 5px;
   font-family: var(--font-body);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Gold glowing dot before the title */
+.section-header h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(200,146,42,0.6), 0 0 20px rgba(200,146,42,0.2);
+  animation: dotPulse 3s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+  0%, 100% { box-shadow: 0 0 8px rgba(200,146,42,0.5), 0 0 16px rgba(200,146,42,0.2); }
+  50%       { box-shadow: 0 0 14px rgba(200,146,42,0.9), 0 0 28px rgba(200,146,42,0.35); }
 }
 
 .section-header .sub {
   font-size: 0.85rem;
   color: var(--muted);
+  margin: 0;
+  padding-left: 18px;
+  font-style: italic;
+  font-family: var(--font-body);
+  letter-spacing: 0.01em;
 }
 
 /* ── Category filter tags ──────────────────────────────── */
@@ -1994,12 +2053,12 @@ input, textarea, select, button {
 
   /* ── Section headers ── */
   .section-header {
-    padding: 14px 14px;
+    padding: 14px 16px;
     margin-bottom: 12px;
   }
 
-  .section-header h2  { font-size: 1.3rem; }
-  .section-header .sub { font-size: 0.82rem; }
+  .section-header h2   { font-size: 1.3rem; }
+  .section-header .sub { font-size: 0.82rem; padding-left: 16px; }
 
   /* ── Filter tags — single horizontal scroll row ── */
   .filter-tags {
