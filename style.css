@@ -498,19 +498,71 @@ input, textarea, select, button {
 /* ── Section header ────────────────────────────────────── */
 .section-header {
   margin-bottom: 20px;
+  padding: 20px 22px;
+  background: linear-gradient(135deg, #1e1a14 0%, #1a1a1a 60%, #1e1e1e 100%);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle glow effect in top-right corner */
+.section-header::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 120px;
+  height: 120px;
+  background: radial-gradient(circle, rgba(200,146,42,0.08) 0%, transparent 70%);
+  pointer-events: none;
 }
 
 .section-header h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--text);
-  margin: 0 0 4px;
+  margin: 0 0 5px;
   font-family: var(--font-body);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+/* Gold accent dot before the title */
+.section-header h2::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 50%;
+  margin-right: 10px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px;
+  box-shadow: 0 0 8px rgba(200,146,42,0.5);
 }
 
 .section-header .sub {
   font-size: 0.85rem;
   color: var(--muted);
+  margin: 0;
+  padding-left: 18px;
+  font-style: italic;
+  font-family: var(--font-body);
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .section-header {
+    padding: 16px 16px;
+    margin-bottom: 14px;
+  }
+
+  .section-header h2 {
+    font-size: 1.35rem;
+  }
 }
 
 /* ── Category filter tags ──────────────────────────────── */
