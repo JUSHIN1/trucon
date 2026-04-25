@@ -4,8 +4,6 @@ date: 2026-01-20
 image: pics/fruits.jpg
 video:
 category: nutrition
----
-
 Eating a balanced diet rich in fruits and vegetables can strengthen your immunity and protect against infections.
 
 **Top Immune-Boosting Foods:**
