@@ -25,13 +25,10 @@ Include these foods in your daily diet for optimal immune function.
 
 ---
 
-title: 5 Minute Morning Stretch Routine
+title: THE BRAIN CHANGING BENEFITS OF EXERCISE 
 date: 2026-01-18
 image:
-video: https://www.youtube.com/embed/BHY0FxzoKZE?si=EgfQO5snar6MLGBy
-category: fitness
-
----
+video:
 
 Start your day with these quick stretches to improve blood flow and flexibility.
 
@@ -45,16 +42,17 @@ Start your day with these quick stretches to improve blood flow and flexibility.
 
 This simple 5-minute routine can transform your mornings and set a positive tone for the entire day. Watch the video above to learn proper form and technique.
 
----
+ https://www.youtube.com/embed/BHY0FxzoKZE?si=EgfQO5snar6MLGBy
+category: fitness
+
+---
 
 title: The Importance of Staying Hydrated
 date: 2026-01-15
 image: pics/water.jpg
 video:
 category: wellness
-
----
-
+
 Drinking enough water daily keeps your body energized, helps digestion, and supports brain function.
 
 **Hydration Benefits:**
