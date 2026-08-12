@@ -8,7 +8,7 @@ avatar:
 
 ---
 
-title: #Beyond the Pyramid sands
+title: Beyond the Pyramid sands
 date: 22-08-2025
 category: Ancient Mysteries
 author: JUSTIN BAKAMA
@@ -178,6 +178,30 @@ There are many systems in which we live but the question is; where do they lead 
 For example; God through the scriptures instructs us to give offerings in our places of fellowship and practicing this is a sign that we respect and honor God. Now, how about you following certain rituals and systems for fun, comfort and fitting in yet you are actually practicing something inspired of satan?
 
 ---
+title: THE COLD QUEST
+date: 22-08-2025
+category: Ancient Mysteries
+author: JUSTIN BAKAMA
+avatar: pics/me.png
+
+To grasp our orb’s true path mocks ancient lore!
+Just as the sun rises every morning.
+Day breaking, the sun sets off in the West,
+And when it finally disappears,
+The quest is, where has it gone?
+“To the other side of the world.”
+Oh no!! The physicist told me its stationary!
+Then, how come it's on the other side if its stationary?
+“The earth moved round,” hmm !!! says the physicist.
+Oh, clockwork priest of Newton’s measured sphere,
+Explain why Joshua’s plea to the sun, not earth, 
+Was in firm command.
+Say, why would he not cry, 'Earth, cease roll'? 
+And wait a bit, does the earth rise? Does it set too?
+Have heard that only the sun rises and sets.
+For if the earth be fixed, and sun do spin, 
+To stay the orb would be madness cloaked in hubris!"
+Ah, not you or I lost in the mundane now.
 
 ---
 
