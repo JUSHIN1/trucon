@@ -23,6 +23,31 @@ Include these foods in your daily diet for optimal immune function.
 
 ---
 ---
+title: WALKING BAREFOOT (GROUNDING)
+date: 2026-01-20
+image: pics/grounding.jpg
+video:
+category: Complementary medicine 
+
+Walking barefoot is one way of connecting with our mother, earth. What happens when you distance yourself from your mother?
+
+We have separated ourselves from the earth, yet it births US. When was the last time you walked barefoot on grass or bare soil? We are so "civilized" to an extent where people own indoor shoes to walk on the tiles, terrazo, and those beautiful carpets.
+Here are a few benefits of grounding;
+◆Neutralize the radicles in your body(Just like birds do on electric wires in the morning)
+
+◆Mood control(stress and depression)
+
+◆Improved coordination and balance( Especially in children)
+
+◆Betters digestion, etc.
+
+At least once a week, on grass or bare soil, ground for a minimum of 30 minutes. For the children, let them always play barefoot.
+
+If you are in a bad mood, go for a walk. If you are still in a bad mood, for another walk. —Hippocrates
+
+
+___
+---
 title: THE BRAIN CHANGING BENEFITS OF EXERCISE 
 date: 2026-01-18
 image:
@@ -40,8 +65,7 @@ Start your day with these quick stretches to improve blood flow and flexibility.
 - Enhances mental clarity
 
 This simple 5-minute routine can transform your mornings and set a positive tone for the entire day. Watch the video above to learn proper form and technique.
-
-
+
 ---
 
 title: The Importance of Staying Hydrated
@@ -89,30 +113,7 @@ Taking care of your mental health is just as important as physical health. Learn
 
 ##### Your mental health journey is unique. Be patient and kind to yourself.
 ___
-title: WALKING BAREFOOT (GROUNDING)
-date: 2026-01-20
-image: pics/grounding.jpg
-video:
-category: Complementary medicine 
 
-Walking barefoot is one way of connecting with our mother, earth. What happens when you distance yourself from your mother?
-
-We have separated ourselves from the earth, yet it births US. When was the last time you walked barefoot on grass or bare soil? We are so "civilized" to an extent where people own indoor shoes to walk on the tiles, terrazo, and those beautiful carpets.
-Here are a few benefits of grounding;
-◆Neutralize the radicles in your body(Just like birds do on electric wires in the morning)
-
-◆Mood control(stress and depression)
-
-◆Improved coordination and balance( Especially in children)
-
-◆Betters digestion, etc.
-
-At least once a week, on grass or bare soil, ground for a minimum of 30 minutes. For the children, let them always play barefoot.
-
-If you are in a bad mood, go for a walk. If you are still in a bad mood, for another walk. —Hippocrates
-
-
-____
 title: 10 Foods That Boost Your Immune System
 date: 2026-01-20
 image: pics/fruits.jpg
