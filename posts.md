@@ -179,7 +179,7 @@ For example; God through the scriptures instructs us to give offerings in our pl
 
 ---
 title: THE COLD QUEST
-date: 22-08-2025
+date: 12-08-2026
 category: Ancient Mysteries
 author: JUSTIN BAKAMA
 avatar: pics/me.png
